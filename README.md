@@ -26,9 +26,9 @@
 ```
 
 ## 使用方式:
-####1.下载项目或者下载项目中DHAlertViewHUD这个文件,将下载好的文件拖拽到自己的工程文件夹中,并在自己添加APP引导页的类中导入#import "DHAlertViewHUD.h"头文件;
+####1.下载项目或者下载项目中DHAlertViewHUD这个文件,将下载好的文件拖拽到自己的工程文件夹中,并在使用DHAlertViewHUD的类中导入#import "DHAlertViewHUD.h"头文件;
 
-####2.初始化DHAlertViewHUD视图(例)
+####2.初始化并使用DHAlertViewHUD视图(例)
 ```objc
 // 创建DHAlertViewHUD
 DHAlertViewHUD *alertView = [[DHAlertViewHUD alloc] initWithTitle:@"标题" message:@"内容" cancelButtonTitle:@"取消" otherButtonTitle:@"确定" alertViewClickIndexBlock:^(NSInteger alertViewClickIndex) {
@@ -39,5 +39,26 @@ DHAlertViewHUD *alertView = [[DHAlertViewHUD alloc] initWithTitle:@"标题" mess
 // 显示DHAlertViewHUD
 [alertView showDHAlertViewHUD];
 ```
+## 部分代码说明:
+####1.创建并初始化DHAlertViewHUD方式时,该SDK会自动检测当前按钮的值: ①当两个按钮值同时为nil时会取消按钮的显示并默认添加自动消失的效果; ②当其中一个按钮为nil时会默认添加一个按钮并自动分配相应的大小; ③当两个按钮同时有值时正常显示;
+
+####2.设置DHAlertViewHUD的弹出样式:
+```objc
+// 默认效果
+DDShowAlertViewAnimationStyleDefault
+// 从顶部滑落
+DDShowAlertViewAnimationStyleTop
+// 从左边弹出
+DDShowAlertViewAnimationStyleLeft
+// 从下面弹出
+DDShowAlertViewAnimationStyleBottom
+// 从右面弹出
+DDShowAlertViewAnimationStyleRight
+// 没有效果
+DDShowAlertViewAnimationStyleNO
+// 对应使用的方法是:
+[alertView setAlertViewAnimationStyle:<#(DDShowAlertViewAnimationStyle)#>];
+```
+
 
 ## <<分享是一种美德,Star是一种鼓励![image](https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DHGuidePageHUDExample/DHGuidePageHUDExampleUITests/Untitled-star/Untitled-star.png)>>
