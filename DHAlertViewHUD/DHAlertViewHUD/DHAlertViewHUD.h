@@ -18,9 +18,15 @@ typedef NS_ENUM(NSInteger , DDShowAlertViewAnimationStyle) {
 };
 typedef void(^DDAlertViewHUDClickIndexBlock)(NSInteger alertViewClickIndex);
 
+typedef NS_ENUM(NSInteger, DDAlertViewButtonStyle) {
+    DDAlertViewButtonStyleInline = 0,   // 内联
+    DDAlertViewButtonStylePlain,        // 平铺
+};
+
 @interface DHAlertViewHUD : UIView
-@property (nonatomic,copy  ) DDAlertViewHUDClickIndexBlock alertViewClickBlock;
-@property (nonatomic,assign) DDShowAlertViewAnimationStyle alertViewAnimationStyle;
+@property (nonatomic, copy  ) DDAlertViewHUDClickIndexBlock alertViewClickBlock;
+@property (nonatomic, assign) DDShowAlertViewAnimationStyle alertViewAnimationStyle;
+@property (nonatomic, assign) DDAlertViewButtonStyle        alertViewButtonStyle;
 
 /**
  *  自定义初始化DHAlertViewHUD

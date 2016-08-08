@@ -23,3 +23,15 @@
     return image;
 }
 @end
+/**
+ *  自定义视图圆角方案:
+ *  UIView *customFilletView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 200, 80)];
+ *  [customFilletView setBackgroundColor:[UIColor redColor]];
+ *  [self.view addSubview:customFilletView];
+ *
+ *  UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:customFilletView.bounds byRoundingCorners:UIRectCornerBottomLeft | UIRectCornerBottomRight cornerRadii:CGSizeMake(10, 10)];
+ *  CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+ *  maskLayer.frame = customFilletView.bounds;
+ *  maskLayer.path = maskPath.CGPath;
+ *  customFilletView.layer.mask = maskLayer;
+ */
