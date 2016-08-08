@@ -149,6 +149,29 @@
     [self.alertWindow becomeKeyWindow];
     [self.alertWindow makeKeyAndVisible];
     
+    switch (self.alertViewButtonStyle) {
+        case DDAlertViewButtonStyleInline: {
+            
+        }
+            break;
+            
+        case DDAlertViewButtonStylePlain: {
+            CGFloat buttonY = self.alertView.frame.size.height-DDAlertViewButtonH-5;
+            
+            self.cancelButton.layer.cornerRadius = 0.0;
+            self.cancelButton.layer.masksToBounds = YES;
+            self.cancelButton.frame = CGRectMake(0, buttonY, DDAlertViewW*0.5, DDAlertViewButtonH+5);
+            
+            self.otherButton.layer.cornerRadius = 0.0;
+            self.otherButton.layer.masksToBounds = YES;
+            self.otherButton.frame = CGRectMake(DDAlertViewW*0.5, buttonY, DDAlertViewW*0.5, DDAlertViewButtonH+5);
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
     [self.alertWindow addSubview:self];
     [self setShowAnimation];
 }
