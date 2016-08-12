@@ -30,12 +30,13 @@
 #define DDBtnTitleFont      [UIFont systemFontOfSize:15.0];
 
 @interface DHAlertViewHUD ()
-@property (nonatomic, strong) UIWindow *alertWindow;
-@property (nonatomic, strong) UIView   *alertView;
-@property (nonatomic, strong) UILabel  *titleLabel;
-@property (nonatomic, strong) UILabel  *messageLabel;
-@property (nonatomic, strong) UIButton *cancelButton;
-@property (nonatomic, strong) UIButton *otherButton;
+@property (nonatomic, strong) UIWindow  *alertWindow;
+@property (nonatomic, strong) UIView    *alertView;
+@property (nonatomic, strong) UILabel   *titleLabel;
+@property (nonatomic, strong) UILabel   *messageLabel;
+@property (nonatomic, strong) UIButton  *cancelButton;
+@property (nonatomic, strong) UIButton  *otherButton;
+@property (nonatomic, assign) NSInteger buttonTitleID;
 @end
 
 @implementation DHAlertViewHUD
@@ -112,14 +113,18 @@
             [self.alertView addSubview:self.otherButton];
         }
         
+        self.buttonTitleID = 0;
         CGFloat buttonY = self.alertView.frame.size.height-DDAlertViewButtonH-10;
         if (cancelButtonTitle && !otherButtonTitle) {
+            self.buttonTitleID = 1;
             self.cancelButton.tag = 0;
             self.cancelButton.frame = CGRectMake(DDButtonLeftSpace, buttonY, DDAlertViewW-DDButtonLeftSpace*2, DDAlertViewButtonH);
         } else if (!cancelButtonTitle && otherButtonTitle){
+            self.buttonTitleID = 2;
             self.otherButton.tag = 0;
             self.otherButton.frame = CGRectMake(DDButtonLeftSpace, buttonY, DDAlertViewW-DDButtonLeftSpace*2, DDAlertViewButtonH);
         } else if (cancelButtonTitle && otherButtonTitle){
+            self.buttonTitleID = 3;
             self.cancelButton.tag = 0;
             self.otherButton.tag = 1;
             CGFloat btnSpace = 20; /**< 两个button之间的间距 */
@@ -127,6 +132,7 @@
             self.cancelButton.frame = CGRectMake(DDButtonLeftSpace, buttonY, buttonW, DDAlertViewButtonH);
             self.otherButton.frame = CGRectMake(self.alertView.frame.size.width-buttonW-DDButtonLeftSpace, buttonY, buttonW, DDAlertViewButtonH);
         } else if (!cancelButtonTitle && !otherButtonTitle) {
+            self.buttonTitleID = 4;
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self dismissDHAlertViewHUD];
             });
@@ -157,14 +163,23 @@
             
         case DDAlertViewButtonStylePlain: {
             CGFloat buttonY = self.alertView.frame.size.height-DDAlertViewButtonH-5;
+            if (self.buttonTitleID == 1) {
+                self.cancelButton.frame = CGRectMake(0, buttonY, DDAlertViewW, DDAlertViewButtonH+5);
+            }
             
-            self.cancelButton.layer.cornerRadius = 0.0;
-            self.cancelButton.layer.masksToBounds = YES;
-            self.cancelButton.frame = CGRectMake(0, buttonY, DDAlertViewW*0.5, DDAlertViewButtonH+5);
+            if (self.buttonTitleID == 2) {
+                self.otherButton.frame = CGRectMake(0, buttonY, DDAlertViewW, DDAlertViewButtonH+5);
+            }
             
-            self.otherButton.layer.cornerRadius = 0.0;
-            self.otherButton.layer.masksToBounds = YES;
-            self.otherButton.frame = CGRectMake(DDAlertViewW*0.5, buttonY, DDAlertViewW*0.5, DDAlertViewButtonH+5);
+            if (self.buttonTitleID == 3) {
+                self.cancelButton.layer.cornerRadius = 0.0;
+                self.cancelButton.layer.masksToBounds = YES;
+                self.cancelButton.frame = CGRectMake(0, buttonY, DDAlertViewW*0.5, DDAlertViewButtonH+5);
+                
+                self.otherButton.layer.cornerRadius = 0.0;
+                self.otherButton.layer.masksToBounds = YES;
+                self.otherButton.frame = CGRectMake(DDAlertViewW*0.5, buttonY, DDAlertViewW*0.5, DDAlertViewButtonH+5);
+            }
         }
             break;
             
