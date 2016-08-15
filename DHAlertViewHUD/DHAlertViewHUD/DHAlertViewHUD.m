@@ -164,10 +164,14 @@
         case DDAlertViewButtonStylePlain: {
             CGFloat buttonY = self.alertView.frame.size.height-DDAlertViewButtonH-5;
             if (self.buttonTitleID == 1) {
+                self.cancelButton.layer.cornerRadius = 0.0;
+                self.cancelButton.layer.masksToBounds = YES;
                 self.cancelButton.frame = CGRectMake(0, buttonY, DDAlertViewW, DDAlertViewButtonH+5);
             }
             
             if (self.buttonTitleID == 2) {
+                self.otherButton.layer.cornerRadius = 0.0;
+                self.otherButton.layer.masksToBounds = YES;
                 self.otherButton.frame = CGRectMake(0, buttonY, DDAlertViewW, DDAlertViewButtonH+5);
             }
             
