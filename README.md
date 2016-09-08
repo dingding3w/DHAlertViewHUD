@@ -1,7 +1,18 @@
 # DHAlertViewHUD
 ###快速集成APP提示框,包含淡入淡出\下滑弹出\左滑弹出\上滑弹出\右滑弹出\自动消失\手动消失等效果;
 ## 效果图展示:
-![image](https://github.com/dingding3w/DHAlertViewHUD/blob/master/DHAlertViewHUD/DesignSketchGIF/Untitled-1.gif) ![image](https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-4.png) ![image](https://github.com/dingding3w/DHAlertViewHUD/blob/master/DHAlertViewHUD/DesignSketchGIF/Untitled-2.gif)
+<!--![image](https://github.com/dingding3w/DHAlertViewHUD/blob/master/DHAlertViewHUD/DesignSketchGIF/Untitled-1.gif) ![image](https://github.com/dingding3w/DHGuidePageHUD/blob/master/DHGuidePageHUD/DesignSketchGIF/Untitled-4.png) ![image](https://github.com/dingding3w/DHAlertViewHUD/blob/master/DHAlertViewHUD/DesignSketchGIF/Untitled-2.gif)-->
+<table>
+	<tr>
+		<th>DDAlertViewButtonStyleInline</th>
+		<th>DDAlertViewButtonStylePlain</th>
+	</tr>
+	
+	<tr>
+		<td><img src="https://github.com/dingding3w/DHAlertViewHUD/blob/master/DHAlertViewHUD/DesignSketchGIF/Untitled-1.gif" width="600"></td>
+		<td><img src="https://github.com/dingding3w/DHAlertViewHUD/blob/master/DHAlertViewHUD/DesignSketchGIF/Untitled-2.gif" width="600"></td>
+	</tr>
+</table>
 
 ## 方法说明:
 ```objc
