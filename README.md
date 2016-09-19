@@ -6,11 +6,15 @@
 	<tr>
 		<th>DDAlertViewButtonStyleInline</th>
 		<th>DDAlertViewButtonStylePlain</th>
+		<th>DDAlertViewButtonStyleInline</th>
+		<th>DDAlertViewButtonStylePlain</th>
 	</tr>
 	
 	<tr>
-		<td><img src="https://github.com/dingding3w/DHAlertViewHUD/blob/master/DHAlertViewHUD/DesignSketchGIF/Untitled-1.gif" height="600"></td>
-		<td><img src="https://github.com/dingding3w/DHAlertViewHUD/blob/master/DHAlertViewHUD/DesignSketchGIF/Untitled-2.gif" height="600"></td>
+		<td><img src="https://github.com/dingding3w/DHAlertViewHUD/blob/master/DHAlertViewHUD/DesignSketchGIF/Untitled-1.gif" height="300"></td>
+		<td><img src="https://github.com/dingding3w/DHAlertViewHUD/blob/master/DHAlertViewHUD/DesignSketchGIF/Untitled-2.gif" height="300"></td>
+		<td><img src="https://github.com/dingding3w/DHAlertViewHUD/blob/master/DHAlertViewHUD/DesignSketchGIF/Untitled-1.gif" height="300"></td>
+		<td><img src="https://github.com/dingding3w/DHAlertViewHUD/blob/master/DHAlertViewHUD/DesignSketchGIF/Untitled-2.gif" height="300"></td>
 	</tr>
 </table>
 
