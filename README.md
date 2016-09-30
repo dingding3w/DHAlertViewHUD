@@ -49,7 +49,7 @@ DHAlertViewHUD *alertView = [[DHAlertViewHUD alloc] initWithTitle:@"标题" mess
 }];
 // 设置DHAlertViewHUD弹出样式(不设置则显示默认样式)
 [alertView setAlertViewAnimationStyle:DDShowAlertViewAnimationStyleTop];
-// 设置DHAlertViewHUD按钮样式(不设置则显示DDAlertViewButtonStyleInline样式)
+// 设置DHAlertViewHUD按钮样式(不设置则显示DDAlertViewButtonStyleInline样式,该样式即为默认样式)
 [alertView setAlertViewButtonStyle:DDAlertViewButtonStylePlain];
 // 显示DHAlertViewHUD
 [alertView showDHAlertViewHUD];
